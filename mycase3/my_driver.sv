@@ -42,12 +42,12 @@ task my_driver::main_phase(uvm_phase phase);
         while (!vif.rst_n) begin
             @(posedge vif.clk);
         end
-        for (int i = 0; i < 256; i++) begin
+        for (int i = 0; i < 512; i++) begin
             @(posedge vif.clk);
             //$urandom_range(maxval, minval = 0) is not work!!!!
             //It seems positions of maxval and minval is irrelevant.
             vif.data <= $urandom_range(0, 255);
-            vif.valid <= 1'b1;
+            vif.valid <= $urandom_range(0, 1);
             `uvm_info(get_name(), "data is drived", UVM_LOW);
         end
         @(posedge vif.clk);

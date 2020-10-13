@@ -1,7 +1,7 @@
 all: com sim
 .PHONY:com sim clean
 
-OUTPUT = mycase3
+OUTPUT = mycase5
 
 #UVM_TESTNAME = my_driver
 

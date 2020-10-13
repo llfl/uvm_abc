@@ -2,8 +2,9 @@
 `include "uvm_macros.svh"
 
 import uvm_pkg::*;
-`include "my_driver.sv"
 `include "my_if.sv"
+`include "my_transaction.sv" //it has to place befor driver
+`include "my_driver.sv"
 
 module top_tb;
 
